@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Bella 💕</title>
+    <title>Happy Valentine's Day 💕</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700&family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -15,11 +15,11 @@
         }
 
         body {
-            font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #e8eaf6 100%);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe8d9 50%, #f9e4d4 100%);
             min-height: 100vh;
             overflow: hidden;
-            color: #4a2040;
+            color: #3d1f1f;
             user-select: none;
             -webkit-user-select: none;
         }
@@ -39,7 +39,7 @@
             opacity: 0;
             animation: floatUp linear infinite;
             font-size: 24px;
-            filter: drop-shadow(0 0 4px rgba(255, 107, 138, 0.3));
+            filter: drop-shadow(0 0 6px rgba(192, 64, 64, 0.4));
         }
 
         @keyframes floatUp {
@@ -71,7 +71,7 @@
             padding: 20px;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .scene.active {
@@ -81,10 +81,11 @@
 
         /* ── Scene 1: Landing ── */
         #scene1 .greeting {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 8vw, 5rem);
-            color: #ff6b8a;
-            text-shadow: 0 2px 10px rgba(255, 107, 138, 0.3);
+            color: #c04040;
+            text-shadow: 0 3px 12px rgba(139, 38, 53, 0.25);
+            letter-spacing: 0.5px;
             opacity: 0;
             animation: fadeInUp 1.5s ease forwards;
             animation-delay: 0.5s;
@@ -92,7 +93,7 @@
 
         #scene1 .subtext {
             font-size: clamp(1rem, 3vw, 1.4rem);
-            color: #9c6b8a;
+            color: #8b6f47;
             margin-top: 15px;
             opacity: 0;
             animation: fadeInUp 1.5s ease forwards;
@@ -103,7 +104,7 @@
             position: absolute;
             bottom: 40px;
             font-size: 0.9rem;
-            color: #c9a0b8;
+            color: #c9a882;
             opacity: 0;
             animation: fadeInUp 1s ease forwards, pulse 2s ease-in-out infinite;
             animation-delay: 3s, 3s;
@@ -127,11 +128,12 @@
 
         /* ── Scene 2: The Question ── */
         #scene2 .question {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 7vw, 4.5rem);
-            color: #ff1744;
+            color: #8b2635;
             text-align: center;
-            text-shadow: 0 3px 15px rgba(255, 23, 68, 0.25);
+            text-shadow: 0 3px 15px rgba(139, 38, 53, 0.3);
+            letter-spacing: 0.5px;
             margin-bottom: 50px;
             animation: heartbeat 1.5s ease-in-out infinite;
         }
@@ -174,55 +176,56 @@
         }
 
         .btn-yes {
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: clamp(1.2rem, 3vw, 1.6rem);
-            font-weight: 700;
-            padding: 16px 48px;
+            font-weight: 600;
+            padding: 18px 52px;
             border: none;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #ff6b8a, #ff1744);
+            border-radius: 30px;
+            background: linear-gradient(135deg, #c04040, #8b2635);
             color: white;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(255, 23, 68, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            letter-spacing: 0.5px;
+            box-shadow: 0 6px 24px rgba(139, 38, 53, 0.35), 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             animation: glowPulse 2s ease-in-out infinite;
             position: relative;
             z-index: 10;
         }
 
         .btn-yes:hover {
-            transform: scale(1.08);
-            box-shadow: 0 6px 30px rgba(255, 23, 68, 0.6);
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 8px 32px rgba(139, 38, 53, 0.5), 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         @keyframes glowPulse {
-            0%, 100% { box-shadow: 0 4px 20px rgba(255, 23, 68, 0.4); }
-            50% { box-shadow: 0 4px 35px rgba(255, 23, 68, 0.7), 0 0 60px rgba(255, 107, 138, 0.3); }
+            0%, 100% { box-shadow: 0 6px 24px rgba(139, 38, 53, 0.35), 0 2px 8px rgba(0, 0, 0, 0.1); }
+            50% { box-shadow: 0 6px 40px rgba(139, 38, 53, 0.6), 0 0 80px rgba(212, 175, 55, 0.3), 0 2px 8px rgba(0, 0, 0, 0.1); }
         }
 
         .btn-no {
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: clamp(1rem, 2.5vw, 1.3rem);
             font-weight: 600;
             padding: 14px 36px;
-            border: 2px solid #e0a0b8;
-            border-radius: 50px;
+            border: 2px solid #d4af37;
+            border-radius: 30px;
             background: white;
-            color: #c0788e;
+            color: #a67c52;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: absolute;
             z-index: 10;
             white-space: nowrap;
         }
 
         .btn-no:hover {
-            border-color: #ffb0c8;
+            border-color: #daa520;
         }
 
         /* ── Scene 3: Celebration ── */
         #scene3 {
-            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 30%, #f3e5f5 60%, #e8eaf6 100%);
+            background: linear-gradient(135deg, #fff5f0 0%, #ffd4c4 30%, #f9e4d4 60%, #ffe8d9 100%);
             text-align: center;
             overflow: hidden;
         }
@@ -246,21 +249,22 @@
         }
 
         #scene3 .names {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Playfair Display', serif;
             font-size: clamp(1.8rem, 6vw, 3.5rem);
-            color: #ff1744;
+            color: #8b2635;
             margin: 10px 0;
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
             animation-delay: 0.6s;
-            text-shadow: 0 2px 10px rgba(255, 23, 68, 0.2);
+            letter-spacing: 0.5px;
+            text-shadow: 0 3px 12px rgba(139, 38, 53, 0.2);
         }
 
         #scene3 .message {
             font-size: clamp(1rem, 3vw, 1.3rem);
-            color: #7c5270;
+            color: #6b4e3d;
             max-width: 500px;
-            line-height: 1.8;
+            line-height: 1.9;
             margin: 15px auto;
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
@@ -268,11 +272,12 @@
         }
 
         #scene3 .date-reveal {
-            margin-top: 25px;
-            padding: 20px 30px;
-            background: linear-gradient(135deg, rgba(255, 107, 138, 0.15), rgba(224, 64, 251, 0.1));
-            border-radius: 20px;
-            border: 2px solid rgba(255, 107, 138, 0.3);
+            margin-top: 30px;
+            padding: 24px 36px;
+            background: linear-gradient(135deg, rgba(192, 64, 64, 0.12), rgba(212, 175, 55, 0.08));
+            border-radius: 16px;
+            border: 2px solid rgba(192, 64, 64, 0.25);
+            box-shadow: 0 4px 16px rgba(139, 38, 53, 0.1);
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
             animation-delay: 2s;
@@ -280,7 +285,7 @@
 
         #scene3 .date-reveal .label {
             font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            color: #e040fb;
+            color: #d4af37;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -288,19 +293,19 @@
         }
 
         #scene3 .date-reveal .date-text {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Playfair Display', serif;
             font-size: clamp(1.4rem, 4vw, 2rem);
-            color: #ff1744;
+            color: #8b2635;
             font-weight: 700;
         }
 
         #scene3 .quote {
-            font-family: 'Alexandria', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: clamp(0.85rem, 2.5vw, 1.05rem);
             font-style: italic;
-            color: #b07090;
+            color: #a67c52;
             max-width: 420px;
-            line-height: 1.6;
+            line-height: 1.9;
             margin: 10px auto 0;
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
@@ -311,13 +316,13 @@
             display: block;
             font-style: normal;
             font-size: 0.85em;
-            color: #c9a0b8;
+            color: #c9a882;
             margin-top: 4px;
         }
 
         #scene3 .closing {
             font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            color: #b07090;
+            color: #a67c52;
             margin-top: 20px;
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
@@ -328,7 +333,7 @@
         .easter-egg-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(74, 32, 64, 0.7);
+            background: rgba(61, 31, 31, 0.75);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             z-index: 200;
@@ -348,13 +353,13 @@
 
         .easter-egg-card {
             background: white;
-            border-radius: 24px;
+            border-radius: 20px;
             padding: 30px 25px;
             max-width: 420px;
             width: 100%;
             max-height: 80vh;
             overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(255, 23, 68, 0.3);
+            box-shadow: 0 20px 60px rgba(61, 31, 31, 0.4), 0 8px 24px rgba(139, 38, 53, 0.25);
             transform: scale(0.8);
             transition: transform 0.4s ease;
             text-align: left;
@@ -365,9 +370,9 @@
         }
 
         .easter-egg-card .ee-title {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Playfair Display', serif;
             font-size: 1.6rem;
-            color: #ff1744;
+            color: #8b2635;
             text-align: center;
             margin-bottom: 6px;
         }
@@ -375,13 +380,13 @@
         .easter-egg-card .ee-subtitle {
             text-align: center;
             font-size: 0.85rem;
-            color: #c9a0b8;
+            color: #c9a882;
             margin-bottom: 20px;
         }
 
         .easter-egg-card .chat-bubble {
             padding: 10px 14px;
-            border-radius: 16px;
+            border-radius: 14px;
             margin-bottom: 8px;
             font-size: 0.9rem;
             line-height: 1.5;
@@ -390,15 +395,15 @@
         }
 
         .easter-egg-card .chat-bubble.sent {
-            background: linear-gradient(135deg, #ff6b8a, #ff1744);
+            background: linear-gradient(135deg, #c04040, #8b2635);
             color: white;
             margin-left: auto;
             border-bottom-right-radius: 4px;
         }
 
         .easter-egg-card .chat-bubble.received {
-            background: #f3e5f5;
-            color: #4a2040;
+            background: #fff5f0;
+            color: #3d1f1f;
             margin-right: auto;
             border-bottom-left-radius: 4px;
         }
@@ -406,7 +411,7 @@
         .easter-egg-card .chat-name {
             font-size: 0.75rem;
             font-weight: 600;
-            color: #e040fb;
+            color: #d4af37;
             margin-bottom: 3px;
             margin-left: 5px;
         }
@@ -419,22 +424,22 @@
 
         .easter-egg-card .ee-footer {
             text-align: center;
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
-            color: #ff6b8a;
+            color: #c04040;
             margin-top: 20px;
         }
 
         .easter-egg-card .ee-close {
             display: block;
             margin: 15px auto 0;
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 0.9rem;
             font-weight: 600;
             padding: 8px 24px;
             border: none;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #ff6b8a, #e040fb);
+            border-radius: 30px;
+            background: linear-gradient(135deg, #c04040, #d4af37);
             color: white;
             cursor: pointer;
             transition: transform 0.2s ease;
@@ -456,7 +461,7 @@
         }
 
         .big-heart-hint.show {
-            color: #c9a0b8;
+            color: #c9a882;
         }
 
         /* ── Confetti ── */
@@ -535,14 +540,15 @@
     </style>
 </head>
 <body>
+    <script src="config.js"></script>
 
     <!-- Floating Hearts Background -->
     <div class="hearts-bg" id="heartsBg"></div>
 
     <!-- Scene 1: Landing -->
     <div class="scene active" id="scene1">
-        <div class="greeting">Hey Bella...</div>
-        <div class="subtext">I have something to ask you</div>
+        <div class="greeting" id="greeting"></div>
+        <div class="subtext" id="subtext"></div>
         <div class="tap-hint">tap anywhere to continue</div>
     </div>
 
@@ -566,38 +572,26 @@
     <div class="scene" id="scene3">
         <div class="big-heart" id="bigHeart" style="cursor: pointer;">💖</div>
         <div class="big-heart-hint" id="heartHint">psst... keep tapping the heart</div>
-        <div class="names">Stamatis & Bella</div>
-        <div class="message">
-            8 years and counting...<br>
-            Every day with you is my favorite day.
-        </div>
+        <div class="names" id="coupleNames"></div>
+        <div class="message" id="personalMessage"></div>
         <div class="quote">
-            "None of them will ever love you the way I do.<br>It's me and you."
-            <span class="attribution">— You've Got a Friend in Me, Toy Story</span>
+            <span id="quoteText"></span>
+            <span class="attribution" id="quoteAttribution"></span>
         </div>
         <div class="date-reveal">
-            <div class="label">Save the date</div>
-            <div class="date-text">This Saturday at 17:00 🌹</div>
+            <div class="label" id="dateLabel"></div>
+            <div class="date-text" id="dateText"></div>
         </div>
-        <div class="closing">Get ready for a special evening, my love! ✨</div>
+        <div class="closing" id="closingMessage"></div>
     </div>
 
     <!-- Easter Egg: First Conversation -->
     <div class="easter-egg-overlay" id="easterEgg">
         <div class="easter-egg-card">
-            <div class="ee-title">Where it all began...</div>
-            <div class="ee-subtitle">Messenger, 2018</div>
-
-            <div class="chat-name right">Stamatis</div>
-            <div class="chat-bubble sent">Γεια σου! Τι κάνεις; Σκέφτομαι να κάνω ένα project με την φωτογραφική και να κάνω κάθε εβδομάδα ένα διαφορετικό concept. Επειδή είσαι και του χώρου της τέχνης, και είσαι και πολύ εκφραστική κοπέλα θα ήθελες να σε φωτογραφίσω;</div>
-
-            <div class="chat-name">Bella 👸</div>
-            <div class="chat-bubble received">Καλά είμαι! Εσυ;</div>
-
-            <div class="chat-name">Bella 👸</div>
-            <div class="chat-bubble received">Ευχαριστώ για την πρόταση. Τι ακριβώς σκέφτεσαι;</div>
-
-            <div class="ee-footer">...and the rest is history 💕</div>
+            <div class="ee-title" id="eeTitle"></div>
+            <div class="ee-subtitle" id="eeSubtitle"></div>
+            <div id="eeChatMessages"></div>
+            <div class="ee-footer" id="eeFooter"></div>
             <button class="ee-close" id="eeClose">Close</button>
         </div>
     </div>
@@ -606,6 +600,47 @@
     <div class="confetti-container" id="confettiContainer"></div>
 
     <script>
+        // ── Apply Config ──
+        (function applyConfig() {
+            var c = VALENTINE_CONFIG;
+            document.title = c.pageTitle;
+
+            document.getElementById('greeting').textContent = c.greeting;
+            document.getElementById('subtext').textContent = c.subtext;
+            document.getElementById('coupleNames').textContent = c.coupleNames;
+            document.getElementById('personalMessage').innerHTML = c.personalMessage;
+            document.getElementById('quoteText').innerHTML = c.quote.text;
+            document.getElementById('quoteAttribution').textContent = c.quote.attribution;
+            document.getElementById('dateLabel').textContent = c.dateLabel;
+            document.getElementById('dateText').textContent = c.dateText;
+            document.getElementById('closingMessage').textContent = c.closingMessage;
+
+            // Easter egg
+            if (c.easterEgg && c.easterEgg.messages && c.easterEgg.messages.length > 0) {
+                document.getElementById('eeTitle').textContent = c.easterEgg.title;
+                document.getElementById('eeSubtitle').textContent = c.easterEgg.subtitle;
+                document.getElementById('eeFooter').textContent = c.easterEgg.footer;
+
+                var container = document.getElementById('eeChatMessages');
+                c.easterEgg.messages.forEach(function (msg) {
+                    var nameDiv = document.createElement('div');
+                    nameDiv.className = 'chat-name' + (msg.type === 'sent' ? ' right' : '');
+                    nameDiv.textContent = msg.sender;
+
+                    var bubbleDiv = document.createElement('div');
+                    bubbleDiv.className = 'chat-bubble ' + msg.type;
+                    bubbleDiv.textContent = msg.text;
+
+                    container.appendChild(nameDiv);
+                    container.appendChild(bubbleDiv);
+                });
+            } else {
+                // Hide easter egg hint and overlay
+                document.getElementById('heartHint').style.display = 'none';
+                document.getElementById('bigHeart').style.cursor = 'default';
+            }
+        })();
+
         // ── State ──
         let currentScene = 1;
         let noButtonDodgeCount = 0;
@@ -754,7 +789,7 @@
         // ── Confetti ──
         function launchConfetti() {
             const container = document.getElementById('confettiContainer');
-            const colors = ['#ff6b8a', '#ff1744', '#e040fb', '#ffd54f', '#ff80ab', '#ea80fc', '#ff5252', '#ff4081', '#f48fb1'];
+            const colors = ['#c04040', '#8b2635', '#d4af37', '#ffd700', '#c9a882', '#b8860b', '#a67c52', '#cd853f', '#daa520'];
             const shapes = ['square', 'circle'];
             const count = window.innerWidth < 600 ? 60 : 120;
 
@@ -816,7 +851,7 @@
         function createSparkle() {
             const sparkle = document.createElement('div');
             sparkle.className = 'sparkle';
-            const colors = ['#ffd54f', '#ff6b8a', '#e040fb', '#ff80ab', '#ffffff'];
+            const colors = ['#ffd700', '#d4af37', '#c04040', '#f5deb3', '#ffffff'];
             sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
             sparkle.style.left = (10 + Math.random() * 80) + '%';
             sparkle.style.top = (10 + Math.random() * 80) + '%';
@@ -842,28 +877,30 @@
             }, 5000);
         }
 
-        bigHeart.addEventListener('click', function () {
-            heartTaps++;
-            // Visual feedback on each tap
-            bigHeart.style.transform = 'scale(1.3)';
-            setTimeout(function () { bigHeart.style.transform = ''; }, 200);
+        if (VALENTINE_CONFIG.easterEgg && VALENTINE_CONFIG.easterEgg.messages && VALENTINE_CONFIG.easterEgg.messages.length > 0) {
+            bigHeart.addEventListener('click', function () {
+                heartTaps++;
+                // Visual feedback on each tap
+                bigHeart.style.transform = 'scale(1.3)';
+                setTimeout(function () { bigHeart.style.transform = ''; }, 200);
 
-            if (heartTaps >= 5) {
-                easterEgg.classList.add('visible');
-                heartHint.classList.remove('show');
-            } else if (heartTaps >= 2) {
-                heartHint.classList.add('show');
-                heartHint.textContent = (5 - heartTaps) + ' more...';
-            }
-        });
+                if (heartTaps >= 5) {
+                    easterEgg.classList.add('visible');
+                    heartHint.classList.remove('show');
+                } else if (heartTaps >= 2) {
+                    heartHint.classList.add('show');
+                    heartHint.textContent = (5 - heartTaps) + ' more...';
+                }
+            });
 
-        document.getElementById('eeClose').addEventListener('click', function () {
-            easterEgg.classList.remove('visible');
-        });
+            document.getElementById('eeClose').addEventListener('click', function () {
+                easterEgg.classList.remove('visible');
+            });
 
-        easterEgg.addEventListener('click', function (e) {
-            if (e.target === easterEgg) easterEgg.classList.remove('visible');
-        });
+            easterEgg.addEventListener('click', function (e) {
+                if (e.target === easterEgg) easterEgg.classList.remove('visible');
+            });
+        }
 
         // ── Handle window resize (keep No button in bounds) ──
         window.addEventListener('resize', function () {
