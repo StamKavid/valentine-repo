@@ -5,7 +5,16 @@ const scenes = {
     3: document.getElementById('scene3')
 };
 
+// Validate that all scene elements exist
+if (!scenes[1] || !scenes[2] || !scenes[3]) {
+    console.error('Error: One or more scene elements not found');
+    throw new Error('Required scene elements are missing from the DOM');
+}
+
 let currentScene = 1;
+
+// Timing constants
+const GREETING_DURATION_MS = 4000;
 
 // Function to switch scenes
 function switchScene(sceneNumber) {
@@ -14,10 +23,10 @@ function switchScene(sceneNumber) {
     scenes[currentScene].classList.add('active');
 }
 
-// Auto-transition from Scene 1 to Scene 2 after 4 seconds
+// Auto-transition from Scene 1 to Scene 2
 setTimeout(() => {
     switchScene(2);
-}, 4000);
+}, GREETING_DURATION_MS);
 
 // Scene 2: Button interactions
 const yesBtn = document.getElementById('yesBtn');
