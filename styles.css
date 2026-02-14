@@ -1,0 +1,293 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Scene Management */
+.scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+}
+
+.scene.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Scene 1: Greeting */
+.greeting-container {
+    text-align: center;
+    z-index: 10;
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.greeting-text {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.greeting-message {
+    font-size: 1.8rem;
+    color: #ffe6f0;
+    animation: fadeIn 2s ease-in 1s both;
+}
+
+/* Floating Hearts */
+.hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #ff6b9d;
+    transform: rotate(-45deg);
+    animation: float 6s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #ff6b9d;
+    border-radius: 50%;
+}
+
+.heart::before {
+    left: -15px;
+}
+
+.heart::after {
+    top: -15px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(-45deg) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100px) rotate(-45deg) scale(1);
+        opacity: 0;
+    }
+}
+
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 7s; }
+.heart:nth-child(2) { left: 20%; animation-delay: 1s; animation-duration: 6s; }
+.heart:nth-child(3) { left: 30%; animation-delay: 2s; animation-duration: 8s; }
+.heart:nth-child(4) { left: 40%; animation-delay: 0.5s; animation-duration: 7s; }
+.heart:nth-child(5) { left: 50%; animation-delay: 1.5s; animation-duration: 6.5s; }
+.heart:nth-child(6) { left: 60%; animation-delay: 2.5s; animation-duration: 7.5s; }
+.heart:nth-child(7) { left: 70%; animation-delay: 1s; animation-duration: 6s; }
+.heart:nth-child(8) { left: 80%; animation-delay: 2s; animation-duration: 8s; }
+
+/* Scene 2: Question */
+.question-container {
+    text-align: center;
+    z-index: 10;
+}
+
+.question-text {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.buttons-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 80px;
+}
+
+.btn {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.no-btn {
+    background: #e0e0e0;
+    color: #666;
+    position: relative;
+    transition: all 0.1s ease;
+}
+
+/* Scene 3: Success */
+.success-container {
+    text-align: center;
+    z-index: 10;
+}
+
+.success-text {
+    font-size: 5rem;
+    color: white;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.success-message {
+    font-size: 2.5rem;
+    color: #ffe6f0;
+    animation: fadeIn 1s ease-in 0.5s both;
+}
+
+/* Confetti */
+.celebration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ffd700;
+    top: -10px;
+    animation: confettiFall 3s linear infinite;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.confetti:nth-child(1) { left: 10%; background: #ff6b9d; animation-delay: 0s; }
+.confetti:nth-child(2) { left: 20%; background: #ffd700; animation-delay: 0.3s; }
+.confetti:nth-child(3) { left: 30%; background: #00d4ff; animation-delay: 0.6s; }
+.confetti:nth-child(4) { left: 40%; background: #ff6b9d; animation-delay: 0.9s; }
+.confetti:nth-child(5) { left: 50%; background: #ffd700; animation-delay: 1.2s; }
+.confetti:nth-child(6) { left: 60%; background: #00d4ff; animation-delay: 1.5s; }
+.confetti:nth-child(7) { left: 70%; background: #ff6b9d; animation-delay: 1.8s; }
+.confetti:nth-child(8) { left: 80%; background: #ffd700; animation-delay: 2.1s; }
+.confetti:nth-child(9) { left: 90%; background: #00d4ff; animation-delay: 2.4s; }
+.confetti:nth-child(10) { left: 95%; background: #ff6b9d; animation-delay: 2.7s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .greeting-text {
+        font-size: 2rem;
+    }
+    
+    .greeting-message {
+        font-size: 1.2rem;
+    }
+    
+    .question-text {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.2rem;
+    }
+    
+    .success-text {
+        font-size: 3rem;
+    }
+    
+    .success-message {
+        font-size: 1.5rem;
+    }
+}
